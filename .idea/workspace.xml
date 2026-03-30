@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a83d659f-fffd-4ba8-9b54-d8a57c3ac3db" name="Changes" comment="feat(user): implementar camada de serviço para usuário&#10;&#10;- Criado UserService&#10;- Adicionada injeção de dependência do UserRepository&#10;- Implementado método de salvar usuário&#10;- Implementado método de listar usuários&#10;&#10;feat(user): implement user service layer&#10;&#10;- Created UserService&#10;- Added dependency injection for UserRepository&#10;- Implemented save user method&#10;- Implemented list users method">
-      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/java/UserController.java" afterDir="false" />
+    <list default="true" id="a83d659f-fffd-4ba8-9b54-d8a57c3ac3db" name="Changes" comment="atualização nos arquivos&#10;&#10;upgade in files">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/service" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/com/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/com/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-management-api/src/test/java/com/micaela/ordermanagementapi/OrderManagementApiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/ordermanagementapi/OrderManagementApiApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,43 +66,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.OrderManagementApiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pessoal/Downloads/order-management-api&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.OrderManagementApiApplication.executor": "Run",
+    "Spring Boot.Unnamed.executor": "Run",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Pessoal/Downloads/order-management-api",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Pessoal\Downloads\order-management-api\order-management-api\src\test\java\com\micaela\ordermanagementapi" />
+      <recent name="C:\Users\Pessoal\Downloads\order-management-api\order-management-api\src\main\java\com\micaela\ordermanagementapi\service" />
+      <recent name="C:\Users\Pessoal\Downloads\order-management-api\order-management-api\src\main\java\com\micaela\ordermanagementapi\controller" />
       <recent name="C:\Users\Pessoal\Downloads\order-management-api\order-management-api\src\main\java\com\repository" />
       <recent name="C:\Users\Pessoal\Downloads\order-management-api\order-management-api\src\main\java\com\model" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.Unnamed">
+    <configuration name="OrderManagementApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="order-management-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.micaela.ordermanagementapi.OrderManagementApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Unnamed" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Java/jdk-26" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -128,7 +150,10 @@
       <workItem from="1774551892360" duration="425000" />
       <workItem from="1774552335587" duration="819000" />
       <workItem from="1774553186913" duration="1107000" />
-      <workItem from="1774554921309" duration="5094000" />
+      <workItem from="1774554921309" duration="6889000" />
+      <workItem from="1774667415661" duration="1634000" />
+      <workItem from="1774669164461" duration="271000" />
+      <workItem from="1774881867515" duration="4613000" />
     </task>
     <task id="LOCAL-00001" summary="repository">
       <option name="closed" value="true" />
@@ -178,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774665325087</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="atualização nos arquivos&#10;&#10;upgade in files">
+      <option name="closed" value="true" />
+      <created>1774665809300</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1774665809300</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +223,18 @@
     <MESSAGE value="feat(usuario): iniciar estrutura da entidade User&#10;feat(user): start User entity structure" />
     <MESSAGE value="feat(usuario): adicionar estrutura inicial para UserRepository e UserService&#10;feat(user): add initial structure for UserRepository and UserService" />
     <MESSAGE value="feat(user): implementar camada de serviço para usuário&#10;&#10;- Criado UserService&#10;- Adicionada injeção de dependência do UserRepository&#10;- Implementado método de salvar usuário&#10;- Implementado método de listar usuários&#10;&#10;feat(user): implement user service layer&#10;&#10;- Created UserService&#10;- Added dependency injection for UserRepository&#10;- Implemented save user method&#10;- Implemented list users method" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(user): implementar camada de serviço para usuário&#10;&#10;- Criado UserService&#10;- Adicionada injeção de dependência do UserRepository&#10;- Implementado método de salvar usuário&#10;- Implementado método de listar usuários&#10;&#10;feat(user): implement user service layer&#10;&#10;- Created UserService&#10;- Added dependency injection for UserRepository&#10;- Implemented save user method&#10;- Implemented list users method" />
+    <MESSAGE value="atualização nos arquivos&#10;&#10;upgade in files" />
+    <option name="LAST_COMMIT_MESSAGE" value="atualização nos arquivos&#10;&#10;upgade in files" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/controller/UserController.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

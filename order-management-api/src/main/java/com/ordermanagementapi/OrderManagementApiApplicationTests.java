@@ -1,4 +1,4 @@
-package com.micaela.ordermanagementapi;
+package com.ordermanagementapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

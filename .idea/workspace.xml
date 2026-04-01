@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a83d659f-fffd-4ba8-9b54-d8a57c3ac3db" name="Changes" comment="atualização nos arquivos&#10;&#10;upgade in files">
+      <change afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/repository/OrderItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/repository/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/repository/ProductRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/com/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/Teste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +152,7 @@
       <workItem from="1775078308106" duration="1000" />
       <workItem from="1775078325754" duration="97000" />
       <workItem from="1775078453831" duration="1000" />
-      <workItem from="1775078470735" duration="560000" />
+      <workItem from="1775078470735" duration="1325000" />
     </task>
     <task id="LOCAL-00001" summary="repository">
       <option name="closed" value="true" />
@@ -205,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774665809300</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="atualização nos arquivos&#10;&#10;upgade in files">
+      <option name="closed" value="true" />
+      <created>1775079144568</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1775079144568</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

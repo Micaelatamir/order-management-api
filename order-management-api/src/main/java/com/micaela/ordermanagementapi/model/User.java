@@ -1,5 +1,5 @@
 package com.micaela.ordermanagementapi.model;
-
+import java.util.List;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
@@ -20,7 +20,9 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
+
 
     public User() {
     }

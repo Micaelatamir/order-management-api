@@ -1,28 +1,48 @@
 package com.micaela.ordermanagementapi.model;
-
+import java.util.List;
 import jakarta.persistence.*;
+
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
-    @id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+   @ManyToOne
+   @JoinColumn(name="user_id")
+   private User user;
+
     @Column(nullable = false)
-    private String name;
+    private BigDecimal total;
 
-    @Column(nullable= false, unique= true)
-    private int price;
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> items;
 
-    public Order () {
+    public Order () {}
+
+    public Order (User user, BigDecimal total){
+
+        this.user = user;
+        this.total = total;
+
     }
-    public Order (id, name, price){
-        this.id = id;
-        this.name = name;
-        this.price = price ;
-    }
-    @PrePersist
+
+    public Long getId() {return id;}
+
+    public void setId(Long id) {this.id = id;}
+
+    public User  getUser_id (){return user;}
+    public void setUser(User user) {this.user = user;}
+
+    public BigDecimal getTotal() {return total;}
+    public void setTotal(BigDecimal total) {this.total = total;}
+
+    public List<OrderItem> getItems() { return items; }
+    public void setItems(List<OrderItem> items) { this.items = items; }
+
 }
-

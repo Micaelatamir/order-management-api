@@ -1,5 +1,7 @@
 package com.micaela.ordermanagementapi.service;
+import com.micaela.ordermanagementapi.exception.ResourceNotFoundException;
 import com.micaela.ordermanagementapi.model.Order;
+import com.micaela.ordermanagementapi.model.User;
 import com.micaela.ordermanagementapi.repository.OrderRepository;
 import com.micaela.ordermanagementapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +21,15 @@ public class OrderService{
     public List<Order>findAll(){
         return  orderRepository.findAll();
     }
+
     //Buscar todos os ordem pelo id
-    public Order findById(Long id){
-        return  orderRepository.findById(id)
-           .orElseThrow(() -> new RuntimeException("Ordem não encontrado!"));
+    public Order findById(Long id) {
+        return orderRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Ordem não encontrada!"));
+    }
+    public User findUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Usuário não encontrado!"));
     }
     //Salva ordem
     public Order save(Order order){

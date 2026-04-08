@@ -12,7 +12,7 @@ public class OrderRequestDTO {
 
     public void setUserId(Long userId) {this.userId = userId;}
 
-    public BigDecimal getPrice() {return total;}
+    public BigDecimal getTotal() {return total;}
 
-    public void setPrice(BigDecimal price) {this.total = price;}
+    public void setTotal(BigDecimal price) {this.total = price;}
 }

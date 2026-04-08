@@ -1,4 +1,6 @@
 package com.micaela.ordermanagementapi.controller;
+import com.micaela.ordermanagementapi.dto.request.ProductRequestDTO;
+import com.micaela.ordermanagementapi.dto.response.ProductResponseDTO;
 import com.micaela.ordermanagementapi.model.Product;
 import com.micaela.ordermanagementapi.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,19 +18,23 @@ private ProductService productService;
 
 
 @GetMapping
-public List<Product> findAll(){
-    return productService.findAll();
-}
+ public List<ProductResponseDTO> findAll() {
+  return productService.findAll()
+     .stream()
+     .map(ProductResponseDTO::new)
+     .toList();
+    }
 
-@GetMapping("/{id}")
-public Product findByid(@PathVariable Long id){
-    return productService.findById(id);
-}
+  @GetMapping("/{id}")
+   public ProductResponseDTO findById(@PathVariable Long id) {
+     return new ProductResponseDTO(productService.findById(id));
+    }
 
-@PostMapping
-public Product save(@RequestBody Product product) {
-    return productService.save(product);
-}
+   @PostMapping
+   public ProductResponseDTO save(@RequestBody ProductRequestDTO dto) {
+     Product  product= new Product(dto.getName(), dto.getPrice());
+        return new ProductResponseDTO(productService.save(product));
+    }
 
 @DeleteMapping("/{id}")
 public void delete(@PathVariable Long id) {

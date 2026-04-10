@@ -24,8 +24,7 @@ public class User {
     private LocalDateTime createdAt;
 
 
-    public User() {
-    }
+    public User() {}
 
     public User(String name, String email, String password) {
         this.name = name;
@@ -56,4 +55,8 @@ public class User {
     public String getPassword() {return password;}
 
     public void setPassword(String password) {this.password = password;}
+
+    public LocalDateTime getCreatedAt() {return createdAt;}
+
+    public void setCreatedAt(LocalDateTime createdAt) {this.createdAt = createdAt;}
 }

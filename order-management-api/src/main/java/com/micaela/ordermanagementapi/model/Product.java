@@ -18,8 +18,7 @@ public class Product {
     @Column(nullable = false)
     private BigDecimal price;
 
-    @OneToMany(mappedBy = "product")
-    private List<Product> items;
+
 
     public Product() {
     }

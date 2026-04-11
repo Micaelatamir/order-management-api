@@ -178,4 +178,4 @@ spring.datasource.password=your_password
 
 ---
 
-<p align="center">Feito com 💙 por Micaela Tamir</p>
+<p align="center">Micaela Tamir</p>

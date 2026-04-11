@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a83d659f-fffd-4ba8-9b54-d8a57c3ac3db" name="Changes" comment="feat: atualizando controllers para usar DTOs de request e response&#10;&#10;Feat: Updating controllers to use request and response DTOs">
-      <change afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-management-api/src/test/java/com/micaela/ordermanagementapi/OrderManagementApiApplicationTests.java" afterDir="false" />
+    <list default="true" id="a83d659f-fffd-4ba8-9b54-d8a57c3ac3db" name="Changes" comment="feat: adicionando SecurityConfig, corrigindo User, Product e pom.xml&#10;&#10;Feat: Adding SecurityConfig, fixing User, Product, and pom.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-management-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/com/Teste.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/dto/response/UserResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/dto/response/UserResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/controller/OrderItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/controller/OrderItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/model/OrderItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/com/ordermanagementapi/OrderManagementApiApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/security.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/service/OrderItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-management-api/src/main/java/com/micaela/ordermanagementapi/service/OrderItemService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +158,9 @@
       <workItem from="1775499460092" duration="26000" />
       <workItem from="1775499507078" duration="3820000" />
       <workItem from="1775585227371" duration="14562000" />
-      <workItem from="1775684914603" duration="6128000" />
+      <workItem from="1775684914603" duration="7580000" />
+      <workItem from="1775830862533" duration="3310000" />
+      <workItem from="1775843813641" duration="5673000" />
     </task>
     <task id="LOCAL-00001" summary="repository">
       <option name="closed" value="true" />
@@ -390,7 +386,23 @@
       <option name="project" value="LOCAL" />
       <updated>1775684307889</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="feat: adicionando SecurityConfig, corrigindo User, Product e pom.xml&#10;&#10;Feat: Adding SecurityConfig, fixing User, Product, and pom.xml">
+      <option name="closed" value="true" />
+      <created>1775784885236</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1775784885237</updated>
+    </task>
+    <task id="LOCAL-00030" summary="feat: adicionando SecurityConfig, corrigindo User, Product e pom.xml&#10;&#10;Feat: Adding SecurityConfig, fixing User, Product, and pom.xml">
+      <option name="closed" value="true" />
+      <created>1775784893736</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1775784893736</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,6 +441,7 @@
     <MESSAGE value="feat: criando DTOs de request e response para OrderItem&#10;&#10;feat: creating request and response DTOs for OrderItem" />
     <MESSAGE value="feat: criando exceptions ResourceNotFoundException e GlobalExceptionHandler&#10;&#10;feat: criando exceptions ResourceNotFoundException e GlobalExceptionHandler" />
     <MESSAGE value="feat: atualizando controllers para usar DTOs de request e response&#10;&#10;Feat: Updating controllers to use request and response DTOs" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: atualizando controllers para usar DTOs de request e response&#10;&#10;Feat: Updating controllers to use request and response DTOs" />
+    <MESSAGE value="feat: adicionando SecurityConfig, corrigindo User, Product e pom.xml&#10;&#10;Feat: Adding SecurityConfig, fixing User, Product, and pom.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionando SecurityConfig, corrigindo User, Product e pom.xml&#10;&#10;Feat: Adding SecurityConfig, fixing User, Product, and pom.xml" />
   </component>
 </project>

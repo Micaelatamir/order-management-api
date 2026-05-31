@@ -1,38 +1,33 @@
+#  Order Management API
 
+A REST API for order management built from scratch with **Java**, **Spring Boot** and **PostgreSQL**, following clean layered architecture best practices.
 
-# 📦 Order Management API
-
-![Java](https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=java)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.4-green?style=for-the-badge&logo=springboot)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18-blue?style=for-the-badge&logo=postgresql)
-![Spring Security](https://img.shields.io/badge/Spring%20Security-✔-brightgreen?style=for-the-badge&logo=springsecurity)
-![Docker](https://img.shields.io/badge/Docker-✔-2496ED?style=for-the-badge&logo=docker)
-
----
-
-## 🇧🇷 Português
-
-### Sobre o projeto
-
-API REST de gerenciamento de pedidos desenvolvida do zero com **Java + Spring Boot + PostgreSQL**.  
-O projeto faz parte do meu portfólio como desenvolvedora Back-end e foi construído com foco em boas práticas de arquitetura em camadas, segurança e organização de código.
+![Java](https://img.shields.io/badge/Java_17-FF3B00?style=for-the-badge&logo=java&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-00C853?style=for-the-badge&logo=spring&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-2979FF?style=for-the-badge&logo=postgresql&logoColor=white)
+![Spring Security](https://img.shields.io/badge/Spring_Security-00C853?style=for-the-badge&logo=springsecurity&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-00B0FF?style=for-the-badge&logo=docker&logoColor=white)
 
 ---
 
-### ✨ Funcionalidades
+## 📌 About
 
-- ✅ CRUD completo de **Usuários**, **Produtos**, **Pedidos** e **Itens de Pedido**
-- ✅ Autenticação via **Spring Security** com Basic Auth
-- ✅ Padrão **DTO** para proteger dados sensíveis (senha nunca exposta nas respostas)
-- ✅ Tratamento global de exceções com mensagens personalizadas
-- ✅ Mapeamento de entidades com **JPA/Hibernate**
-- ✅ Preenchimento automático de `createdAt` com `@PrePersist`
+This project simulates a real-world order management system with users, products, orders, and order items. Built as part of my backend developer portfolio with a focus on clean architecture, security, and code organization.
 
 ---
 
-### 🏗️ Arquitetura
+##  Features
 
-O projeto segue a arquitetura em camadas padrão do Spring:
+- Full CRUD for Users, Products, Orders, and Order Items
+- Authentication via Spring Security (Basic Auth → JWT migration in progress)
+- DTO pattern to protect sensitive data — password never exposed in responses
+- Global exception handling with custom error messages
+- JPA/Hibernate entity mapping
+- Auto-fill of `createdAt` using `@PrePersist`
+
+---
+
+##  Architecture
 
 ```
 Controller → Service → Repository → Database
@@ -40,209 +35,107 @@ Controller → Service → Repository → Database
 
 ```
 src/
-├── controller/     # Recebe as requisições HTTP
-├── service/        # Regras de negócio
-├── repository/     # Acesso ao banco de dados
-├── model/          # Entidades JPA
+├── controller/     # HTTP request handling
+├── service/        # Business logic
+├── repository/     # Database access
+├── model/          # JPA entities
 ├── dto/
-│   ├── request/    # Dados que chegam do cliente
-│   └── response/   # Dados retornados ao cliente
-├── exception/      # Tratamento global de erros
-└── security/       # Configuração de segurança
+│   ├── request/    # Incoming client data
+│   └── response/   # Data returned to client
+├── exception/      # Global error handling
+└── security/       # Security configuration
 ```
 
 ---
 
-### 🗄️ Modelagem do banco de dados
+## 🗄️ Database Model
 
 ```
 Users ──< Orders ──< Order_Items >── Products
 ```
 
-| Entidade      | Descrição                                |
-|---------------|------------------------------------------|
-| `users`       | Usuários cadastrados no sistema          |
-| `products`    | Produtos disponíveis para compra         |
-| `orders`      | Pedidos vinculados a um usuário          |
-| `order_items` | Itens de cada pedido (produto + qtd)     |
+| Entity | Description |
+|---|---|
+| `users` | Registered users |
+| `products` | Available products |
+| `orders` | Orders linked to a user |
+| `order_items` | Items in each order (product + quantity) |
 
 ---
 
-### 🛠️ Tecnologias utilizadas
+## 🛠️ Tech Stack
 
-| Tecnologia        | Versão  |
-|-------------------|---------|
-| Java              | 17      |
-| Spring Boot       | 4.0.4   |
-| Spring Data JPA   | -       |
-| Spring Security   | -       |
-| PostgreSQL        | 18      |
-| Hibernate         | 7.2.7   |
-| Maven             | -       |
-| Docker            | -       |
-
----
-
-### 📋 Endpoints
-
-#### 👤 Users
-
-| Método | Rota          | Descrição              |
-|--------|---------------|------------------------|
-| GET    | `/users`      | Lista todos os usuários |
-| GET    | `/users/{id}` | Busca usuário por ID   |
-| POST   | `/users`      | Cria novo usuário      |
-| DELETE | `/users/{id}` | Remove usuário         |
-
-<details>
-<summary>📨 Exemplo de requisição — POST /users</summary>
-
-```json
-{
-  "name": "Micaela Tamir",
-  "email": "micaela@email.com",
-  "password": "senha123"
-}
-```
-
-**Resposta (201 Created):**
-```json
-{
-  "id": 1,
-  "name": "Micaela Tamir",
-  "email": "micaela@email.com"
-}
-```
-> 🔒 A senha **nunca é retornada** nas respostas — protegida pelo padrão DTO.
-</details>
+| Technology | Version |
+|---|---|
+| Java | 17 |
+| Spring Boot | 4.0.4 |
+| Spring Data JPA | — |
+| Spring Security | — |
+| PostgreSQL | 18 |
+| Hibernate | 7.2.7 |
+| Maven | — |
+| Docker | — |
 
 ---
 
-#### 📦 Products
+##  Endpoints
 
-| Método | Rota             | Descrição               |
-|--------|------------------|-------------------------|
-| GET    | `/products`      | Lista todos os produtos |
-| GET    | `/products/{id}` | Busca produto por ID    |
-| POST   | `/products`      | Cria novo produto       |
-| DELETE | `/products/{id}` | Remove produto          |
+### Users
+| Method | Route | Description |
+|---|---|---|
+| GET | `/users` | List all users |
+| GET | `/users/{id}` | Get user by ID |
+| POST | `/users` | Create new user |
+| DELETE | `/users/{id}` | Delete user |
 
-<details>
-<summary>📨 Exemplo de requisição — POST /products</summary>
+### Products
+| Method | Route | Description |
+|---|---|---|
+| GET | `/products` | List all products |
+| GET | `/products/{id}` | Get product by ID |
+| POST | `/products` | Create new product |
+| DELETE | `/products/{id}` | Delete product |
 
-```json
-{
-  "name": "Teclado Mecânico",
-  "price": 299.90,
-  "description": "Teclado mecânico ABNT2 com switch blue"
-}
-```
+### Orders
+| Method | Route | Description |
+|---|---|---|
+| GET | `/orders` | List all orders |
+| GET | `/orders/{id}` | Get order by ID |
+| POST | `/orders` | Create new order |
+| DELETE | `/orders/{id}` | Delete order |
 
-**Resposta (201 Created):**
-```json
-{
-  "id": 1,
-  "name": "Teclado Mecânico",
-  "price": 299.90,
-  "description": "Teclado mecânico ABNT2 com switch blue"
-}
-```
-</details>
-
----
-
-#### 🛒 Orders
-
-| Método | Rota           | Descrição              |
-|--------|----------------|------------------------|
-| GET    | `/orders`      | Lista todos os pedidos |
-| GET    | `/orders/{id}` | Busca pedido por ID    |
-| POST   | `/orders`      | Cria novo pedido       |
-| DELETE | `/orders/{id}` | Remove pedido          |
-
-<details>
-<summary>📨 Exemplo de requisição — POST /orders</summary>
-
-```json
-{
-  "userId": 1
-}
-```
-
-**Resposta (201 Created):**
-```json
-{
-  "id": 1,
-  "userId": 1,
-  "createdAt": "2026-05-07T10:30:00"
-}
-```
-</details>
+### Order Items
+| Method | Route | Description |
+|---|---|---|
+| GET | `/order-items` | List all items |
+| GET | `/order-items/{id}` | Get item by ID |
+| POST | `/order-items` | Create new item |
+| DELETE | `/order-items/{id}` | Delete item |
 
 ---
 
-#### 🧾 Order Items
+## ⚙️ Getting Started
 
-| Método | Rota                | Descrição              |
-|--------|---------------------|------------------------|
-| GET    | `/order-items`      | Lista todos os itens   |
-| GET    | `/order-items/{id}` | Busca item por ID      |
-| POST   | `/order-items`      | Cria novo item         |
-| DELETE | `/order-items/{id}` | Remove item            |
-
-<details>
-<summary>📨 Exemplo de requisição — POST /order-items</summary>
-
-```json
-{
-  "orderId": 1,
-  "productId": 1,
-  "quantity": 2
-}
-```
-
-**Resposta (201 Created):**
-```json
-{
-  "id": 1,
-  "orderId": 1,
-  "productId": 1,
-  "productName": "Teclado Mecânico",
-  "quantity": 2,
-  "unitPrice": 299.90,
-  "totalPrice": 599.80
-}
-```
-</details>
-
----
-
-### ▶️ Como rodar o projeto
-
-#### Pré-requisitos
+### Prerequisites
 - Java 17+
 - PostgreSQL
 - Maven
 
 ```bash
-# Clone o repositório
+# Clone the repository
 git clone https://github.com/Micaelatamir/order-management-api.git
-
-# Acesse a pasta do projeto
 cd order-management-api
 
-# Configure o banco de dados em src/main/resources/application.properties
+# Set up the database in src/main/resources/application.properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/orderdb
-spring.datasource.username=seu_usuario
-spring.datasource.password=sua_senha
+spring.datasource.username=your_username
+spring.datasource.password=your_password
 
-# Execute a aplicação
+# Run the application
 ./mvnw spring-boot:run
 ```
 
-#### 🐳 Rodando com Docker Compose
-
-> Em breve: o `docker-compose.yml` está sendo adicionado ao projeto.
+### Running with Docker Compose
 
 ```bash
 docker-compose up -d
@@ -250,94 +143,39 @@ docker-compose up -d
 
 ---
 
-### 🔐 Autenticação
+##  Authentication
 
-A API utiliza **Basic Auth** via Spring Security.  
-Configure as credenciais no `application.properties`:
+The API uses Basic Auth via Spring Security. Set credentials in `application.properties`:
 
 ```properties
 spring.security.user.name=admin
 spring.security.user.password=admin123
 ```
 
-Nos clientes HTTP, envie o header:
+Send the header in HTTP clients:
+
 ```
-Authorization: Basic <base64(usuario:senha)>
-```
-
----
-
-### 🗺️ Próximos passos (Roadmap)
-
-- [ ] Migração de Basic Auth para **JWT**
-- [ ] Adição de **Docker Compose** para facilitar execução
-- [ ] **Validação de dados** com Bean Validation (`@NotBlank`, `@Email`, etc.)
-- [ ] Documentação interativa com **Swagger / OpenAPI**
-- [ ] Testes unitários com **JUnit + Mockito**
-
----
-
-## 🇺🇸 English
-
-### About
-
-A REST API for order management built from scratch with **Java + Spring Boot + PostgreSQL**.  
-This project is part of my back-end developer portfolio, focused on layered architecture best practices, security, and clean code organization.
-
----
-
-### ✨ Features
-
-- ✅ Full CRUD for **Users**, **Products**, **Orders**, and **Order Items**
-- ✅ Authentication via **Spring Security** with Basic Auth
-- ✅ **DTO pattern** to protect sensitive data (password never exposed)
-- ✅ Global exception handling with custom messages
-- ✅ JPA/Hibernate for database mapping
-- ✅ Auto-fill of `createdAt` using `@PrePersist`
-
----
-
-### 🛠️ Tech Stack
-
-| Technology        | Version |
-|-------------------|---------|
-| Java              | 17      |
-| Spring Boot       | 4.0.4   |
-| Spring Data JPA   | -       |
-| Spring Security   | -       |
-| PostgreSQL        | 18      |
-| Hibernate         | 7.2.7   |
-| Maven             | -       |
-| Docker            | -       |
-
----
-
-### ▶️ How to run
-
-**Requirements:** Java 17+, PostgreSQL, Maven
-
-```bash
-# Clone the repository
-git clone https://github.com/Micaelatamir/order-management-api.git
-
-# Set up the database in application.properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/orderdb
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-
-# Run the project
-./mvnw spring-boot:run
+Authorization: Basic <base64(username:password)>
 ```
 
 ---
 
-## 👩‍💻 Autora | Author
+## Roadmap
 
-**Micaela Tamir**
-
-[![GitHub](https://img.shields.io/badge/GitHub-Micaelatamir-black?style=for-the-badge&logo=github)](https://github.com/Micaelatamir)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Micaela%20Tamir-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/micaela-tamires-aa320b312/)
+- [x] Full CRUD for all entities
+- [x] Spring Security with Basic Auth
+- [x] DTO pattern + global exception handling
+- [ ] Migrate Basic Auth to JWT
+- [ ] Docker Compose setup
+- [ ] Bean Validation (`@NotBlank`, `@Email`, etc.)
+- [ ] Swagger / OpenAPI documentation
+- [ ] Unit tests with JUnit + Mockito
 
 ---
 
-> 🌟 *"Código é poesia. E eu tô escrevendo a minha história linha por linha."*
+##  Author
+
+**Micaela Tamires** — Backend Developer focused on Java, Spring Boot, and software security.
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/micaela-tamires-aa320b312/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Micaelatamir)
